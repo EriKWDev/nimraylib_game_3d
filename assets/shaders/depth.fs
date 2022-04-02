@@ -5,23 +5,29 @@ in vec2 fragTexCoord;
 in vec4 fragColor;
 
 // Input uniform values
-uniform sampler2D texture0;// Depth texture
+uniform sampler2D texture0; // Depth texture
 uniform vec4 colDiffuse;
+uniform sampler2D shadowMap;
 
 // Output fragment color
 out vec4 finalColor;
 
 // NOTE: Add here your custom variables
 
-void main()
-{
-  float zNear=10.;// camera z near
-  float zFar=100.;// camera z far
-  float z=texture(texture0,fragTexCoord).x;
+const float zNear = 0.01; // camera z near
+const float zFar = 200.0; // camera z far
+
+float linearize_depth(float d) {
+  return zNear * zFar / (zFar + d * (zNear - zFar));
+}
+
+void main() {
+  float z = texture(shadowMap, fragTexCoord).r;
+  finalColor = vec4(vec3(z), 1.0);
   
   // Linearize depth value
-  float depth=(2.*zNear)/(zFar+zNear-z*(zFar-zNear));
+  // float depth = linearize_depth(z);
   
   // Calculate final fragment color
-  finalColor=vec4(depth,depth,depth,1.f);
+  // finalColor = vec4(vec3(depth), 1.0);
 }
