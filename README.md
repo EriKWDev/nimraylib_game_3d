@@ -12,6 +12,13 @@ I also use my own editor "plugin" for nimraylib_now [nimraygui_editor](https://g
 
 ![demo.gif](./demo.gif)
 
+To run the demo:
+```sh
+git clone git@github.com:EriKWDev/nimraylib_game_3d.git
+cd nimraylib_game_3d
+nimble run
+```
+
 # License
 All code here is released under the MIT license. The model used here is the famous sponza scene from Crytek which (I beleive) is released under https://www.cryengine.com/ce-terms and used here under those terms. This is not a "serious game" and is only meant as a test of OpenGL.
 
