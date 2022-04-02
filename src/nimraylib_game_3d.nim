@@ -268,6 +268,8 @@ proc main() =
       else:
         disableCursor()
 
+    if isKeyPressed(KeyboardKey.F10):
+      editor.toggleVisibility()
 
     timeIt "shader update":
       updateShaderValues(game)
