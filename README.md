@@ -10,7 +10,8 @@ I also use my own editor "plugin" for nimraylib_now [nimraygui_editor](https://g
 - Mouse scroll to zoom in out
 
 
-![demo.gif](./demo.gif)
+![demo1.png](./demo1.png)
+![demo2.png](./demo2.png)
 
 To run the demo:
 ```sh
