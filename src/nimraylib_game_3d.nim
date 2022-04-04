@@ -182,7 +182,7 @@ proc main() =
     width = 800.0
     height = 700.0
 
-  setConfigFlags(WINDOW_RESIZABLE or MSAA_4X_HINT)
+  setConfigFlags(WINDOW_RESIZABLE) # or MSAA_4X_HINT
   initWindow(width.toInt().toCint(), height.toInt().toCint(), "Raylib test")
   enableDepthTest()
 
